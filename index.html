@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Alfian</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- AOS (Animate On Scroll) -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Cursor Effect CSS -->
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #111;
+      cursor: none; /* sembunyikan cursor asli */
+    }
+
+    .cursor {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      border: 2px solid cyan;
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      transition: transform 0.1s ease;
+      z-index: 9999;
+    }
+
+    .cursor::after {
+      content: "";
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      border: 2px solid rgba(0, 255, 255, 0.3);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+<body>
+  <!-- Cursor -->
+  <div class="cursor"></div>
+
+  <!-- Script Cursor -->
+  <script>
+    const cursor = document.querySelector(".cursor");
+
+    document.addEventListener("mousemove", e => {
+      cursor.style.top = e.clientY + "px";
+      cursor.style.left = e.clientX + "px";
+    });
+  </script>
+</body>
+</html>
+
+
+
+<!-- Jam Digital -->
+<div class="clock-widget">
+  <div id="clock"></div>
+</div>
+
+<style>
+  .clock-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0,0,0,0.6);
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-family: 'Orbitron', sans-serif;
+    box-shadow: 0 0 10px rgba(0,255,255,0.4);
+    z-index: 3000;
+  }
+
+  #clock {
+    font-size: 18px;
+    color: cyan;
+    text-shadow: 0 0 6px cyan, 0 0 12px cyan;
+    letter-spacing: 2px;
+  }
+</style>
+
+<script>
+  function updateClock() {
+    const now = new Date();
+    let h = now.getHours().toString().padStart(2, '0');
+    let m = now.getMinutes().toString().padStart(2, '0');
+    let s = now.getSeconds().toString().padStart(2, '0');
+    document.getElementById("clock").textContent = `${h}:${m}:${s}`;
+  }
+  setInterval(updateClock, 1000);
+  updateClock();
+</script>
+
+<!-- Font Orbitron -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+
+
+
+
+  <div class="navbar">
+  <div class="logo">
+    <img src="images/logo dkv.png" alt="Logo">
+  </div>
+  <nav>
+    <ul>
+      <li><a href="#about"   data-id="Tentang" data-en="About"></a></li>
+      <li><a href="#projects" data-id="Proyek"  data-en="Projects"></a></li>
+      <li><a href="#contact" data-id="Kontak"  data-en="Contact"></a></li>
+    </ul>
+  </nav>
+  <div class="lang-switch">
+    <select id="langSelect" onchange="setLang(this.value)">
+      <option value="id">🇮🇩 ID</option>
+      <option value="en">🇬🇧 EN</option>
+    </select>
+  </div>
+</div>
+
+
+
+
+
+<div class="navbar">
+  <div class="logo">
+    <img src="images/logo dkv.png
+    " alt="Logo">
+  </div>
+  <nav>
+    <ul>
+      <li><a href="#about" data-id="Tentang" data-en="About"></a></li>
+      <li><a href="#projects" data-id="Proyek" data-en="Projects"></a></li>
+      <li><a href="#contact" data-id="Kontak" data-en="Contact"></a></li>
+    </ul>
+  </nav>
+  <div class="lang-switch">
+    <select onchange="setLang(this.value)">
+      <option value="id">🇮🇩 ID</option>
+      <option value="en">🇬🇧 EN</option>
+    </select>
+  </div>
+</div>
+
+
+
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-content" data-aos="fade-up">
+      <h1>Hi, I’m <span>Alfian</span></h1>
+      <p>Photographer • Photo Editor • Graphic Designer</p>
+      <a href="#portfolio" class="btn">See My Work</a>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section class="about" id="about" data-aos="fade-right">
+    <h2>About Me</h2>
+    <p>
+      Saya seorang fotografer dan desainer grafis yang fokus pada storytelling visual.
+      Dari menangkap momen kecil hingga menciptakan desain kreatif, saya percaya setiap detail punya cerita.
+    </p>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+<!-- ====== Skills Section ====== -->
+<section class="skills">
+  <div class="skill-card" data-aos="fade-right">
+    <div class="text">
+      <h3>🎬 Video Editing</h3>
+      <p>Saya berpengalaman menggunakan software editing seperti Premiere Pro & After Effects untuk membuat video yang cinematic dan engaging.</p>
+    </div>
+    <div class="media">
+      <video src="videos/contoh.mp4" autoplay muted loop></video>
+    </div>
+  </div>
+
+  <div class="skill-card" data-aos="fade-left">
+    <div class="text">
+      <h3>📸 Photography</h3>
+      <p>Saya menangkap momen dengan gaya natural dan penuh cerita, dari portrait sampai street photography.</p>
+    </div>
+    <div class="media">
+      <img src="images/skill-photo.jpg" alt="Photography">
+    </div>
+  </div>
+
+  <div class="skill-card" data-aos="fade-right">
+    <div class="text">
+      <h3>🎨 Graphic Design</h3>
+      <p>Saya membuat desain visual kreatif untuk poster, branding, dan kebutuhan digital marketing.</p>
+    </div>
+    <div class="media">
+      <img src="images/skill-design.png" alt="Graphic Design">
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+<section class="gd-section" id="graphic-design">
+  <h2>Graphic Design</h2>
+
+  <!-- ROW 1 -->
+   <img src="images/brandkit.jpg" alt="Brand Kit">
+
+  <div class="gd-track-wrapper">
+    <ul class="gd-track gd-track-1">
+      <!-- Ganti src & alt sesuai gambar kamu -->
+      <li><img src="images/desain1.png" alt="Poster Event" data-caption="Poster Event" /></li>
+      <li><img src="images/desain2.png" alt="Logo Concept" data-caption="Logo Concept" /></li>
+      <li><img src="images/design3.jpg" alt="Social Media Carousel" data-caption="Social Media Carousel" /></li>
+      <li><img src="images/design4.jpg" alt="Flyer Promo" data-caption="Flyer Promo" /></li>
+      <li><img src="images/design5.jpg" alt="Brand Kit" data-caption="Brand Kit" /></li>
+
+      <!-- Duplikat untuk loop tak terputus -->
+      <li><img src="images/design1.jpg" alt="Poster Event" data-caption="Poster Event" /></li>
+      <li><img src="images/design2.jpg" alt="Logo Concept" data-caption="Logo Concept" /></li>
+      <li><img src="images/design3.jpg" alt="Social Media Carousel" data-caption="Social Media Carousel" /></li>
+      <li><img src="images/design4.jpg" alt="Flyer Promo" data-caption="Flyer Promo" /></li>
+      <li><img src="images/design5.jpg" alt="Brand Kit" data-caption="Brand Kit" /></li>
+    </ul>
+  </div>
+
+  <!-- ROW 2 (arah kebalikan) -->
+  <div class="gd-track-wrapper">
+    <ul class="gd-track gd-track-2">
+      <li><img src="images/design6.jpg" alt="Poster Music" data-caption="Poster Music" /></li>
+      <li><img src="images/design7.jpg" alt="Packaging Mockup" data-caption="Packaging Mockup" /></li>
+      <li><img src="images/design8.jpg" alt="UI Card" data-caption="UI Card" /></li>
+      <li><img src="images/design9.jpg" alt="T-Shirt Graphic" data-caption="T-Shirt Graphic" /></li>
+      <li><img src="images/design10.jpg" alt="Billboard Layout" data-caption="Billboard Layout" /></li>
+
+      <li><img src="images/design6.jpg" alt="Poster Music" data-caption="Poster Music" /></li>
+      <li><img src="images/design7.jpg" alt="Packaging Mockup" data-caption="Packaging Mockup" /></li>
+      <li><img src="images/design8.jpg" alt="UI Card" data-caption="UI Card" /></li>
+      <li><img src="images/design9.jpg" alt="T-Shirt Graphic" data-caption="T-Shirt Graphic" /></li>
+      <li><img src="images/design10.jpg" alt="Billboard Layout" data-caption="Billboard Layout" /></li>
+    </ul>
+  </div>
+</section>
+
+<!-- Modal (lihat besar) -->
+<div id="gd-modal" class="gd-modal">
+  <span class="gd-close">&times;</span>
+  <img class="gd-modal-img" id="gd-modal-img" alt="">
+  <div class="gd-caption" id="gd-caption"></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Portfolio -->
+  <section class="portfolio" id="portfolio">
+    <h2 data-aos="fade-up">My Portfolio</h2>
+
+    <!-- Slideshow -->
+    <div class="slideshow-container">
+      <!-- Slide 1 -->
+      <div class="slide fade">
+        <img src="images/photo1.jpg" alt="Portrait session with natural light" onclick="openModal(this)">
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="slide fade">
+        <img src="images/photo2.jpg" alt="Street photography in the golden hour" onclick="openModal(this)">
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="slide fade">
+        <img src="images/photo3.jpg" alt="Landscape shot of the mountains" onclick="openModal(this)">
+      </div>
+
+      <!-- Slide 4 -->
+      <div class="slide fade">
+        <img src="images/photo4.jpg" alt="Creative portrait photography" onclick="openModal(this)">
+      </div>
+
+      <!-- Slide 5 -->
+      <div class="slide fade">
+        <img src="images/photo5.jpg" alt="Night street photography" onclick="openModal(this)">
+      </div>
+
+      <!-- Slide 6 -->
+      <div class="slide fade">
+        <img src="images/photo6.jpg" alt="Cinematic vibes photo" onclick="openModal(this)">
+      </div>
+
+      <!-- Slide 7 -->
+      <div class="slide fade">
+        <img src="images/photo7.jpg" alt="Artistic photography" onclick="openModal(this)">
+      </div>
+
+      <!-- Slide 8 -->
+      <div class="slide fade">
+        <img src="images/photo8.jpg" alt="Studio photography" onclick="openModal(this)">
+      </div>
+
+      <!-- Slide 9 -->
+      <div class="slide fade">
+        <img src="images/photo9.jpg" alt="Nature photography" onclick="openModal(this)">
+      </div>
+
+      <!-- Slide 10 -->
+      <div class="slide fade">
+        <img src="images/photo10.jpg" alt="Minimalist photography" onclick="openModal(this)">
+      </div>
+
+      <!-- Tombol prev/next -->
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+    <!-- dots indikator -->
+    <div class="dots">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+      <span class="dot" onclick="currentSlide(4)"></span>
+      <span class="dot" onclick="currentSlide(5)"></span>
+      <span class="dot" onclick="currentSlide(6)"></span>
+      <span class="dot" onclick="currentSlide(7)"></span>
+      <span class="dot" onclick="currentSlide(8)"></span>
+      <span class="dot" onclick="currentSlide(9)"></span>
+      <span class="dot" onclick="currentSlide(10)"></span>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div id="photoModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImage">
+    <div id="caption"></div>
+  </div>
+
+  <!-- Contact -->
+  <section class="contact" id="contact" data-aos="fade-up">
+    <h2>Contact Me</h2>
+    <p>Let’s collaborate! Hubungi saya lewat email atau sosial media.</p>
+    <a href="mailto:yourname@email.com" class="btn">Email Me</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Alfian. All rights reserved.</p>
+  </footer>
+
+  <!-- AOS Script -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+
+  <!-- Slideshow Script -->
+  <script>
+    let slideIndex = 0;
+    let slideTimer;
+
+    showSlides();
+
+    function showSlides() {
+      let slides = document.getElementsByClassName("slide");
+      let dots = document.getElementsByClassName("dot");
+
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1 }
+
+      for (let i = 0; i < dots.length; i++) {
+        dots[i].classList.remove("active");
+      }
+
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].classList.add("active");
+
+      slideTimer = setTimeout(showSlides, 5000); // auto ganti tiap 5 detik
+    }
+
+    function plusSlides(n) {
+      clearTimeout(slideTimer);
+      slideIndex += n - 1;
+      showSlides();
+    }
+
+    function currentSlide(n) {
+      clearTimeout(slideTimer);
+      slideIndex = n - 1;
+      showSlides();
+    }
+
+    /* Modal */
+    function openModal(img) {
+      document.getElementById("photoModal").style.display = "block";
+      document.getElementById("modalImage").src = img.src;
+      document.getElementById("caption").innerText = img.alt;
+    }
+    function closeModal() {
+      document.getElementById("photoModal").style.display = "none";
+    }
+  </script>
+
+
+
+<script>
+function setLang(lang) {
+  // semua elemen yang punya atribut data-id & data-en
+  document.querySelectorAll("[data-id]").forEach(el => {
+    el.textContent = el.getAttribute(`data-${lang}`);
+  });
+}
+</script>
+
+
+
+
+
+
+<script>
+  function setLang(lang) {
+    document.querySelectorAll('.navbar nav a').forEach(a => {
+      a.textContent = (lang === 'en') ? a.dataset.en : a.dataset.id;
+    });
+    localStorage.setItem('lang', lang);
+  }
+
+  // set teks navbar saat pertama kali halaman dibuka
+  document.addEventListener('DOMContentLoaded', () => {
+    const saved = localStorage.getItem('lang') || 'id';
+    setLang(saved);
+    const sel = document.getElementById('langSelect');
+    if (sel) sel.value = saved;
+  });
+</script>
+
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const cursor = document.querySelector('.cursor');
+
+  // Gerakkan cursor custom
+  if (cursor) {
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.top = e.clientY + 'px';
+      cursor.style.left = e.clientX + 'px';
+    });
+  }
+
+  // Efek interaktif teks saat hover
+  const texts = document.querySelectorAll('h1, p, a');
+  texts.forEach((el) => {
+    el.addEventListener('mouseenter', () => el.classList.add('hovered'));
+    el.addEventListener('mouseleave', () => el.classList.remove('hovered'));
+  });
+});
+</script>
+
+
+
+
+
+
+<script>
+  // Buka modal saat klik gambar
+  document.querySelectorAll('#graphic-design img').forEach(img=>{
+    img.addEventListener('click', ()=>{
+      const m = document.getElementById('gd-modal');
+      document.getElementById('gd-modal-img').src = img.src;
+      document.getElementById('gd-caption').textContent = img.dataset.caption || img.alt || '';
+      m.style.display = 'flex';
+    });
+  });
+
+  // Tutup modal
+  const gdModal = document.getElementById('gd-modal');
+  document.querySelector('.gd-close').onclick = () => gdModal.style.display = 'none';
+  gdModal.addEventListener('click', (e)=>{
+    if (e.target === gdModal) gdModal.style.display = 'none';
+  });
+</script>
+
+
+
+
+
+
+
+</body>
+</html>
